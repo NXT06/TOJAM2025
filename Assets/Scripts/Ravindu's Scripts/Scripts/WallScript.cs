@@ -19,4 +19,9 @@ public class WallScript : MonoBehaviour
     {
         
     }
+
+    public void rotateWallRightAngle()
+    {
+        transform.Rotate(0, 90, 0);
+    }
 }
