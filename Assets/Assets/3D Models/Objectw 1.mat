@@ -11,13 +11,13 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 894dc84438807ef44aac980779edd902,
     type: 3}
   m_Parent: {fileID: 2100000, guid: 05c5c6c61890a5f45a45c4508be7cf8d, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 28
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2006
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -25,10 +25,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _QueueControl: 0
+    - _QueueOffset: 6
     m_Colors:
-    - _Highlightv3: {r: 0.92141336, g: 0.9550197, b: 0.9622642, a: 0}
-    - _Shadowv3: {r: 0.51882344, g: 0.7091281, b: 0.8396226, a: 0}
+    - _Highlightv3: {r: 0.7660377, g: 0.5523929, b: 0.32231393, a: 0}
+    - _Shadowv3: {r: 0.5169811, g: 0.26515472, b: 0.10827341, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3817956665559369147
 MonoBehaviour:
