@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WallScript : MonoBehaviour
 {
+    public GameObject firstWall;
+    public GameObject secondWall;
+    public GameObject DoorLeft;
+    public GameObject DoorRight;
     // Start is called before the first frame update
     void Start()
     {

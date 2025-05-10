@@ -1370,8 +1370,8 @@ Transform:
   m_Children:
   - {fileID: 2773685639996242058}
   - {fileID: 3047648370845262871}
-  - {fileID: 9028253916807519385}
   - {fileID: 3231447680673813427}
+  - {fileID: 9028253916807519385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1087641972205534523
@@ -2498,6 +2498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6fe5526c52cfe47a988cf5113e11e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstWall: {fileID: 6281188291184219526}
+  secondWall: {fileID: 4897263738500705541}
+  DoorLeft: {fileID: 2005862306620972247}
+  DoorRight: {fileID: 3691420233426290970}
 --- !u!1 &6281188291184219526
 GameObject:
   m_ObjectHideFlags: 0
