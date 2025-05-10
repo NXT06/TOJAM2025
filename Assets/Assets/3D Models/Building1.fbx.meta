@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 63e8073c7e3544949b1fb34b207a330d
+guid: eed7933ebf6807140828cd55e12f748f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 3a13cadf0d7762946b1ebf20fb125962, type: 2}
+      name: Black
+    second: {fileID: 2100000, guid: aeb75f3c2bb815f40be32486b4d4c815, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: grey
-    second: {fileID: 2100000, guid: aeb75f3c2bb815f40be32486b4d4c815, type: 2}
+      name: DarkGrey
+    second: {fileID: 2100000, guid: fee3057dd3e0a094e9d29ee1429dbd4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: fee3057dd3e0a094e9d29ee1429dbd4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: 018195f484054384893d41aa76789570, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
