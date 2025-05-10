@@ -8,25 +8,30 @@ public class RoomSpawnerScript : MonoBehaviour
 {
     public List<GameObject> roomList = new List<GameObject>();
     private List<Vector3> roomCoordinatesList = new List<Vector3>();
+    public List<Material> materialList = new List<Material>();
     public GameObject wallPrefab;
     public AudioClip fallingsfx;
     private AudioSource audiosource;
     private List<int> usedRoomsList = new List<int>();
     public AnimationCurve fallingAnimation;
-    public CinemachineVirtualCamera CVC;
+    public GameObject Camera;
     // Start is called before the first frame update
     void Start()
     {
         audiosource = gameObject.GetComponent<AudioSource>();
 
-        for (int i = 0; i < 30; i += 10)
-        {
-            for (int j = 0; j < 30; j += 10)
-            {
-                print(roomCoordinatesList);
-                roomCoordinatesList.Add(new Vector3(i, -0.5f, j));
-            }
-        }
+
+        roomCoordinatesList.Add(new Vector3(10, -0.5f, 10));
+        roomCoordinatesList.Add(new Vector3(0, -0.5f, 0));
+        roomCoordinatesList.Add(new Vector3(0, -0.5f, 10));
+        roomCoordinatesList.Add(new Vector3(0, -0.5f, 20));
+        roomCoordinatesList.Add(new Vector3(10, -0.5f, 20));
+        roomCoordinatesList.Add(new Vector3(20, -0.5f, 20));
+        roomCoordinatesList.Add(new Vector3(20, -0.5f, 10));
+        roomCoordinatesList.Add(new Vector3(20, -0.5f, 0));
+        roomCoordinatesList.Add(new Vector3(10, -0.5f, 0));
+
+
         while (usedRoomsList.Count < 8)
         {
             int rand = Random.Range(1, 9);
@@ -35,7 +40,7 @@ public class RoomSpawnerScript : MonoBehaviour
                 usedRoomsList.Add(rand);
             }
         }
-        Coroutine StartRoomSpawning = StartCoroutine(RoomSpawnDelay());
+        StartCoroutine(RoomSpawnDelay());
 
     }
 
@@ -47,33 +52,25 @@ public class RoomSpawnerScript : MonoBehaviour
     public IEnumerator RoomSpawnDelay()
     {
         SpawnCenterBlock();
-        yield return new WaitForSeconds(1.5f);
-        int count = 0;
-        while (count < 9)
+        yield return new WaitForSeconds(1f);
+        int count=1;
+        while (count <= 9)
         {
-            foreach (int i in usedRoomsList)
+            for(count =1; count<9; count++)
             {
-                GameObject room = Instantiate(roomList[i]);
+                GameObject room = Instantiate(roomList[usedRoomsList[count]]);
                 Vector3 upperPosition = roomCoordinatesList[count];
                 upperPosition.y = 50;
-                print("////" + upperPosition);
                 room.transform.position = upperPosition;
                 StartCoroutine(RoomSpawning(room, roomCoordinatesList[count]));
-                count++;
-                if (count == 4)
-                {
-                    count++;
-                }
-                yield return new WaitForSeconds(0.15f*(9/count));
+                yield return new WaitForSeconds(0.15f);
 
             }
         }
     }
     public IEnumerator RoomSpawning(GameObject spawnedRoom, Vector3 endPos)
     {
-
-        print("room pos at start: " + spawnedRoom.transform.position + "   |end pos for room: " + endPos);
-        print("Coroutine started");
+        
         Vector3 StartPos = spawnedRoom.transform.position;
         float t = 0;
         while (t < 1)
@@ -106,28 +103,32 @@ public class RoomSpawnerScript : MonoBehaviour
 
     private void SpawnCenterBlock()
     {
-        //spawning center block
         GameObject room = Instantiate(roomList[0]);
-        Vector3 upperPosition = roomCoordinatesList[4];
+        Vector3 upperPosition = roomCoordinatesList[0];
         upperPosition.y = 50;
-        print("////" + upperPosition);
         room.transform.position = upperPosition;
-        StartCoroutine(RoomSpawning(room, roomCoordinatesList[4]));
+        StartCoroutine(RoomSpawning(room, roomCoordinatesList[0]));
     }
 
     public IEnumerator RoomLanded()
     {
         audiosource.PlayOneShot(fallingsfx);
         float t = 0;
-        CinemachineBasicMultiChannelPerlin CBMCP = CVC.GetComponent<CinemachineBasicMultiChannelPerlin>();
-        
-        while (t < 0.15)
+        Vector3 OGCamPos = Camera.transform.position;
+
+        while (t < 0.15f)
         {
-            CBMCP.m_AmplitudeGain = 1;
+            Vector3 shake = Vector3.one * sineAmount(t);
+            Camera.transform.position = OGCamPos + shake;
             t += Time.deltaTime;
             yield return null;
         }
-        CBMCP.m_AmplitudeGain = 0;
-        
+        Camera.transform.position = OGCamPos;
+
+    }
+
+    private float sineAmount(float t)
+    {
+        return Mathf.Sin(t * 6 / 0.15f) * 0.2f;
     }
 }
