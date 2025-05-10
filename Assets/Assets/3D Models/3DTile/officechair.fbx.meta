@@ -3,7 +3,12 @@ guid: 37f67f768cf9eff45b910ab2b61409c2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chairley
+    second: {fileID: 2100000, guid: aeb75f3c2bb815f40be32486b4d4c815, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

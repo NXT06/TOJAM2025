@@ -12,10 +12,13 @@ public class PlayerController : MonoBehaviour
     public float rotationFactorPerFrame = 2f;
     private Quaternion currentRotation;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<CharacterController>();    
+        controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,9 +37,15 @@ public class PlayerController : MonoBehaviour
 
         if (move != Vector3.zero)
         {
+            //walking
+            animator.SetBool("isWalking", true);
             transform.forward = move;
             Quaternion targetRotation = Quaternion.LookRotation(move);
             transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.deltaTime);
+        } else
+        {
+            //not walking
+            animator.SetBool("isWalking", false);
         }
 
         // Apply gravity
