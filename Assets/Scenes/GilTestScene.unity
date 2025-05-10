@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coworker (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8553078979430709853, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 462621645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2296,6 +2301,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &462621644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462621645}
+  m_Layer: 0
+  m_Name: BillboardingTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &462621645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462621644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -73.7, y: 112.3, z: -73.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &517870407
 Mesh:
   m_ObjectHideFlags: 0
@@ -3913,16 +3949,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3959739859187084746, guid: d706c546666994f49b747a2257c6c0ff,
-        type: 3}
-      propertyPath: isometric
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3959739859187084746, guid: d706c546666994f49b747a2257c6c0ff,
-        type: 3}
-      propertyPath: playerSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4907932045435981129, guid: d706c546666994f49b747a2257c6c0ff,
         type: 3}
       propertyPath: m_Name
@@ -4317,17 +4343,17 @@ PrefabInstance:
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
@@ -4349,6 +4375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coworker (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8553078979430709853, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 462621645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8765,6 +8796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coworker (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8553078979430709853, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 462621645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9457,17 +9493,17 @@ PrefabInstance:
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
@@ -9489,6 +9525,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coworker (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8553078979430709853, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 462621645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11891,6 +11932,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2092262480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4578042028191234311, guid: 9de7bab0c64a617429c30327f97dd550,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165153511432768717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2095395056
 Mesh:
   m_ObjectHideFlags: 0
@@ -12564,6 +12611,50 @@ PrefabInstance:
       propertyPath: _firstActivation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 788246552784734152, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.4133334
+      objectReference: {fileID: 0}
+    - target: {fileID: 788246552784734152, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.4133334
+      objectReference: {fileID: 0}
+    - target: {fileID: 788246552784734152, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117681427253205217, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: _serializedBlackboard
+      value: '{"_variables":{"Seat":{"_name":"Seat","_id":"48dd51a3-d5bb-4f95-928d-9c741c6ad6aa","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"NavMesh":{"_value":1,"_name":"NavMesh","_id":"e6150be4-2eed-4bc9-80a6-7cf646aa8ec7","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AI.NavMeshAgent,
+        UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"PlayerTransform":{"_name":"PlayerTransform","_id":"df4135f6-7b98-40de-93dc-49960ef83654","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"SignifierObject":{"_value":2,"_name":"SignifierObject","_id":"d5a4c496-0c4a-4791-a665-8d8d03c6c074","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117681427253205217, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: _objectReferences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117681427253205217, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: _objectReferences.Array.data[2]
+      value: 
+      objectReference: {fileID: 2092262480}
+    - target: {fileID: 2481812893679719304, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481812893679719304, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3885374831298470918, guid: 9de7bab0c64a617429c30327f97dd550,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12619,6 +12710,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coworker
       objectReference: {fileID: 0}
+    - target: {fileID: 8553078979430709853, guid: 9de7bab0c64a617429c30327f97dd550,
+        type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 462621645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12634,6 +12730,8 @@ SceneRoots:
   - {fileID: 183874858}
   - {fileID: 226502935}
   - {fileID: 1165153511432768717}
+  - {fileID: 1533455562}
+  - {fileID: 927569652}
   - {fileID: 1492608221}
   - {fileID: 11418846}
   - {fileID: 1945380286}
@@ -12655,5 +12753,4 @@ SceneRoots:
   - {fileID: 1799521431}
   - {fileID: 1950074093}
   - {fileID: 815193673}
-  - {fileID: 1533455562}
-  - {fileID: 927569652}
+  - {fileID: 462621645}

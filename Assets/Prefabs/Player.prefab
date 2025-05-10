@@ -979,10 +979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443022ca817dd3748b43f85189017b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isometric: 0
-  playerSpeed: 2
-  move: {x: 0, y: 0, z: 0}
-  rotationFactorPerFrame: 2
+  isometric: 1
+  playerSpeed: 3
+  rotationFactorPerFrame: 20
 --- !u!1 &5097353827879276949
 GameObject:
   m_ObjectHideFlags: 0
