@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool isometric;
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     public float playerSpeed = 2.0f;
@@ -33,6 +35,10 @@ public class PlayerController : MonoBehaviour
 
         // Horizontal input
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (isometric)
+        {
+            move = Quaternion.Euler(0, 45, 0) * move;
+        }
         move = Vector3.ClampMagnitude(move, 1f); //prevents faster diagonal movement
 
         if (move != Vector3.zero)

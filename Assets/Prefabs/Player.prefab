@@ -913,7 +913,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.04, y: 1.76, z: 3.715}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5111478261707724815}
@@ -979,7 +979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443022ca817dd3748b43f85189017b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isometric: 0
   playerSpeed: 2
+  move: {x: 0, y: 0, z: 0}
   rotationFactorPerFrame: 2
 --- !u!1 &5097353827879276949
 GameObject:
