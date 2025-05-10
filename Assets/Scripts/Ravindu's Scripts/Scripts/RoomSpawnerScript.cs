@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
 
 public class RoomSpawnerScript : MonoBehaviour
 {
     public List<GameObject> roomList = new List<GameObject>();
     private List<Vector3> roomCoordinatesList = new List<Vector3>();
+    public GameObject wallPrefab;
+    public AudioClip fallingsfx;
+    private AudioSource audiosource;
     private List<int> usedRoomsList = new List<int>();
     public AnimationCurve fallingAnimation;
+    public CinemachineVirtualCamera CVC;
     // Start is called before the first frame update
     void Start()
     {
+        audiosource = gameObject.GetComponent<AudioSource>();
+
         for (int i = 0; i < 30; i += 10)
         {
             for (int j = 0; j < 30; j += 10)
@@ -40,7 +47,7 @@ public class RoomSpawnerScript : MonoBehaviour
     public IEnumerator RoomSpawnDelay()
     {
         SpawnCenterBlock();
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1.5f);
         int count = 0;
         while (count < 9)
         {
@@ -57,7 +64,7 @@ public class RoomSpawnerScript : MonoBehaviour
                 {
                     count++;
                 }
-                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(0.15f*(9/count));
 
             }
         }
@@ -76,7 +83,7 @@ public class RoomSpawnerScript : MonoBehaviour
             spawnedRoom.transform.position = Vector3.Lerp(StartPos, endPos, fallingAnimation.Evaluate(t));
             if (t > 1)
             {
-                RoomLanded();
+                StartCoroutine(RoomLanded());
             }
             yield return null;
         }
@@ -108,8 +115,19 @@ public class RoomSpawnerScript : MonoBehaviour
         StartCoroutine(RoomSpawning(room, roomCoordinatesList[4]));
     }
 
-    public void RoomLanded()
+    public IEnumerator RoomLanded()
     {
-
+        audiosource.PlayOneShot(fallingsfx);
+        float t = 0;
+        CinemachineBasicMultiChannelPerlin CBMCP = CVC.GetComponent<CinemachineBasicMultiChannelPerlin>();
+        
+        while (t < 0.15)
+        {
+            CBMCP.m_AmplitudeGain = 1;
+            t += Time.deltaTime;
+            yield return null;
+        }
+        CBMCP.m_AmplitudeGain = 0;
+        
     }
 }
