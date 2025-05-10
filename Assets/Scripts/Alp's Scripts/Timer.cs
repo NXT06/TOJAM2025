@@ -10,11 +10,16 @@ public class Timer : MonoBehaviour
     int seconds, minutes;
     string minute0, second0;
     string timePeriod;
+    bool stop = false;
+    //private IEnumerator coroutine;
     // Start is called before the first frame update
     void Start()
     {
         time = 540;
         timePeriod = "AM";
+        //coroutine = Timer(2.0f);
+        //StartCoroutine(coroutine);
+        print("Coroutine started");
     }
 
     // Update is called once per frame
@@ -22,9 +27,9 @@ public class Timer : MonoBehaviour
     {
 
         //Starts counting time
-        if (minutes < 17)
+        if (!stop)
         {
-            time += Time.deltaTime * 50;
+            time += Time.deltaTime;
         }
         Debug.Log(Time.deltaTime);
         //Sets float to int and divides by 60 for minutes
@@ -51,9 +56,21 @@ public class Timer : MonoBehaviour
         }
         if (minutes > 12)
         {
-            minutes-=12;
+            time = time / (60 * 6);
+            //minutes-=12;
+            minutes = 2;
             timePeriod = "PM";
+        }
+        if (minutes == 5)
+        {
+            stop = true;
         }
         text.text = minute0 + minutes + ":" + second0 + seconds + " " + timePeriod;
     }
+
+    /*private IEnumerator Timer(float waitTime)
+    {
+        yield return new Timer(waitTime);
+        print("Coroutine ended: " + Time.time + " seconds");
+    }*/
 }
