@@ -19,7 +19,7 @@ namespace NodeCanvas.Tasks.Actions {
         protected override void OnUpdate()
         {
             navAgent.value.SetDestination(destination.value.position);
-            
+             
             if (!navAgent.value.pathPending)
             {
                 if (navAgent.value.remainingDistance <= navAgent.value.stoppingDistance)
