@@ -97,6 +97,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _BackGlossylevel: 0.17
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -126,11 +127,13 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _darknessofbackglos: -0.17
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CustonGLoss: {r: 0.5660378, g: 0.4493974, b: 0.19490923, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Highlightv3: {r: 1, g: 0.47009265, b: 0.2588235, a: 0}
-    - _Shadowv3: {r: 0.6698113, g: 0, b: 0.13986576, a: 0}
+    - _Highlightv3: {r: 1, g: 0.2588235, b: 0.3214178, a: 0}
+    - _Shadowv3: {r: 0.5943396, g: 0.14297791, b: 0.2380015, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
