@@ -8,6 +8,7 @@ public class Lives : MonoBehaviour
     public static int lives = 3;
     public Sprite sprite1, sprite2, sprite3, sprite4;
     public Image life1, life2, life3;
+    
     private IEnumerator coroutine;
     public int spriteFrame = 0;
     public static bool animating = true;
@@ -33,34 +34,23 @@ public class Lives : MonoBehaviour
         }
         if (lives == 2)
         {
-            if (animating)
-            {
-                //life3.GetComponent<Animation>().Play();
-                coroutine = AnimationCouroutine(life3);
-                StartCoroutine(coroutine);
-                animating = false;
-                
-                //animate(life3);
-
-            }
+            life1.sprite = sprite2;
+            life2.sprite = sprite1;
+            life3.sprite = sprite1;
         }
         if (lives == 1)
         {
-            if (animating)
-            {
-                coroutine = AnimationCouroutine(life2);
-                StartCoroutine(coroutine);
-                animating = false;
-            }
+            
+                life1.sprite = sprite2;
+                life2.sprite = sprite2;
+                life3.sprite = sprite1;
+            
         }
         if (lives == 0)
         {
-            if (animating)
-            {
-                coroutine = AnimationCouroutine(life1);
-                StartCoroutine(coroutine);
-                animating = false;
-            }
+            life1.sprite = sprite2;
+            life2.sprite = sprite2;
+            life3.sprite = sprite2;
         }
     }
 

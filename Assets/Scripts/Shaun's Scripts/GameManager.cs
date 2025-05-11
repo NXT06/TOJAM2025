@@ -119,8 +119,8 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         Lives.lives = 3;
-        Sliders.t = 40; 
-        
+        Sliders.t = 40;
+        Sliders.sliderStatus = true; 
         isGameStarted = false ;
         endWindow.SetActive(false);
         SceneManager.LoadScene("MainScene");
@@ -181,12 +181,12 @@ public class GameManager : MonoBehaviour
             print("opening elevator");
             audioFX.clip = elevatorDing;
             audioFX.Play();
-            int rand = Random.Range(0, 2);
-            if (rand == 0)
+            int rand = Random.Range(0, 4);
+            if (rand < 2)
                 Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
-            else if (rand == 1)
+            else if (rand < 4)
                 Instantiate(coworkerPrefab2, elevatorSpawn.position, transform.rotation, null);
-            else if (rand == 2)
+            else if (rand == 4)
                 Instantiate(coworkerPrefab3, elevatorSpawn.position, transform.rotation, null);
             //print("spawned");
             yield return new WaitForSeconds(5f);
