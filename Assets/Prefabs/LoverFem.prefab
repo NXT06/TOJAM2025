@@ -1634,7 +1634,7 @@ GameObject:
   - component: {fileID: 5491872185811734209}
   - component: {fileID: 4074150908580981218}
   m_Layer: 2
-  m_Name: Lover
+  m_Name: LoverFem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1742,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 9150754147254246460}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

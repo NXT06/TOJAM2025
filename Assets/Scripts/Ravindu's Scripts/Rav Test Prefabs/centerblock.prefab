@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 2362231747591792890}
   - component: {fileID: 1200168784940622336}
   - component: {fileID: 5973412594992999813}
+  - component: {fileID: 4121346148121685312}
   m_Layer: 0
   m_Name: Shaft (1)
   m_TagString: Untagged
@@ -435,6 +436,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Center: {x: 0, y: 0.00000005960466, z: 1.2234658e-12}
+--- !u!208 &4121346148121685312
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399754497445597931}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2443460424697458114
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +464,7 @@ GameObject:
   - component: {fileID: 9210654344931204182}
   - component: {fileID: 8568406730270887926}
   - component: {fileID: 8173432952376477024}
+  - component: {fileID: 4021490161789144675}
   m_Layer: 0
   m_Name: Shaft (12)
   m_TagString: Untagged
@@ -540,6 +558,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Center: {x: 0, y: 0.00000005960466, z: 1.2234658e-12}
+--- !u!208 &4021490161789144675
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443460424697458114}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2718231970695780031
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +586,7 @@ GameObject:
   - component: {fileID: 6437500467985458794}
   - component: {fileID: 5679359077412020119}
   - component: {fileID: 7239268358110702245}
+  - component: {fileID: 2713048583949799355}
   m_Layer: 0
   m_Name: Shaft (11)
   m_TagString: Untagged
@@ -645,6 +680,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Center: {x: 0, y: 0.00000005960466, z: 1.2234658e-12}
+--- !u!208 &2713048583949799355
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718231970695780031}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3634995548336526801
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +708,7 @@ GameObject:
   - component: {fileID: 3439666977463155167}
   - component: {fileID: 1888938504174014388}
   - component: {fileID: 8150413258566619536}
+  - component: {fileID: 6489592992595988957}
   m_Layer: 0
   m_Name: Shaft (10)
   m_TagString: Untagged
@@ -750,6 +802,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Center: {x: 0, y: 0.00000005960466, z: 1.2234658e-12}
+--- !u!208 &6489592992595988957
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3634995548336526801}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3689624915265128754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1355,7 @@ GameObject:
   - component: {fileID: 3045747540278659970}
   - component: {fileID: 6773084092538964811}
   - component: {fileID: 5058641432817712267}
+  - component: {fileID: 2657314519314539420}
   m_Layer: 0
   m_Name: Shaft (2)
   m_TagString: Untagged
@@ -1380,6 +1449,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Center: {x: 0, y: 0.00000005960466, z: 1.2234658e-12}
+--- !u!208 &2657314519314539420
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185055481677511280}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7739339708126433951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1476,6 @@ GameObject:
   - component: {fileID: 3831211730030533527}
   - component: {fileID: 5023129430335994073}
   - component: {fileID: 553118642965396024}
-  - component: {fileID: 4622975652668922224}
   m_Layer: 0
   m_Name: Shaft
   m_TagString: Untagged
@@ -1464,27 +1548,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4622975652668922224
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7739339708126433951}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.0000005, z: 1.0000005}
-  m_Center: {x: 0, y: 0.00000005960466, z: 1.2234658e-12}
 --- !u!1 &8852225988331473057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1725,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082233355236770102, guid: 4feb0301f8cdffe429a9034e38bdc46f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.7268561
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082233355236770102, guid: 4feb0301f8cdffe429a9034e38bdc46f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000418016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082233355236770102, guid: 4feb0301f8cdffe429a9034e38bdc46f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000010814483
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123723394487907414, guid: 4feb0301f8cdffe429a9034e38bdc46f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6262457
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123723394487907414, guid: 4feb0301f8cdffe429a9034e38bdc46f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000039321844
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123723394487907414, guid: 4feb0301f8cdffe429a9034e38bdc46f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3471623
       objectReference: {fileID: 0}
     - target: {fileID: 9181593636148288040, guid: 4feb0301f8cdffe429a9034e38bdc46f,
         type: 3}

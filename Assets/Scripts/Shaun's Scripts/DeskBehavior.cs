@@ -16,7 +16,7 @@ public class DeskBehavior : MonoBehaviour
     private void Awake()
     {
         //scans the area for the chosen targetLayer
-        seats = Physics.OverlapSphere(transform.position, 100, seatLayer);
+        seats = Physics.OverlapSphere(transform.position, 500, seatLayer);
 
 
         foreach (Collider seat in seats)
