@@ -44,7 +44,9 @@ public class DeskBehavior : MonoBehaviour
             {
                 seatStatus[i] = false;
                 seatTransform = seats[i].transform;
+
                 i = seats.Length;
+                
             }
             else
             {

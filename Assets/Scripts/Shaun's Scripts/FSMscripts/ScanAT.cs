@@ -18,7 +18,7 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<Animator> animator;
         public BBParameter<Light> visionConeLight;
         public BBParameter<AudioSource> audioSource;
-
+        Transform targetSeat; 
         protected override void OnExecute()
         {
             playerTransform.value = GameObject.FindWithTag("Player").transform;
@@ -29,9 +29,12 @@ namespace NodeCanvas.Tasks.Actions {
             animator.value = agent.GetComponentInChildren<Animator>();
             spriteRenderer.value = agent.GetComponentInChildren<SpriteRenderer>();
 
-            Transform target = DeskBehavior.CheckOccupied();
 
-            targetTransform.value = target.transform;
+            
+           // if (targetSeat = null) 
+                targetSeat = DeskBehavior.CheckOccupied();
+
+            targetTransform.value = targetSeat.transform;
            
             EndAction(true);
         }

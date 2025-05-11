@@ -118,6 +118,9 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
+        Lives.lives = 3;
+        Sliders.t = 40; 
+        
         isGameStarted = false ;
         endWindow.SetActive(false);
         SceneManager.LoadScene("MainScene");

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public static float startTime; 
     public TextMeshProUGUI text;
     public float time;
     int seconds, minutes;
@@ -17,7 +18,8 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = 540;
+        startTime = 540; 
+        time = startTime;
         timePeriod = "AM";
         //coroutine = Timer(2.0f);
         //StartCoroutine(coroutine);
