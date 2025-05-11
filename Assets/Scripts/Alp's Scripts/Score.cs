@@ -6,7 +6,7 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int kissCounter = 0;
+    public static int kissCounter = 0;
     public TextMeshProUGUI text;
     void Start()
     {
@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
         text.text = kissCounter.ToString();
     }
 
-    public void kiss()
+    public static void Kiss()
     {
         kissCounter++;
     }

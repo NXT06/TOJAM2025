@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Lives : MonoBehaviour
 {
-    public int lives = 3;
+    public static int lives = 3;
     public Sprite sprite1, sprite2, sprite3, sprite4;
     public Image life1, life2, life3;
     private IEnumerator coroutine;
     public int spriteFrame = 0;
-    public bool animating = true;
+    public static bool animating = true;
     public float t;
     public float timer = 0.3f;
     public bool couroutineFinished = false;
@@ -127,7 +127,7 @@ public class Lives : MonoBehaviour
         animate(spriteRef);
     }
 
-    public void hit()
+    public static void Hit()
     {
         animating = true;
         lives--;

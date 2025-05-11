@@ -14,17 +14,22 @@ namespace NodeCanvas.Tasks.Actions {
         protected override void OnExecute()
         {
 
-            navAgent.value.SetDestination(destination.value.position);
         }
 
         protected override void OnUpdate()
         {
+            navAgent.value.SetDestination(destination.value.position);
+            
             if (!navAgent.value.pathPending)
             {
                 if (navAgent.value.remainingDistance <= navAgent.value.stoppingDistance)
                 {
                     if (!navAgent.value.hasPath || navAgent.value.velocity.sqrMagnitude == 0)
+                    {
+                        Debug.Log("reached seat");
                         EndAction(true);
+                    }
+
                 }
             }
         }

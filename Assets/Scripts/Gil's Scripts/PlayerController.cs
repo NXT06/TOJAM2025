@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour
             if (!kissTriggered)
             {
                 animator.SetTrigger("Kiss");
+                Score.Kiss();
+                //play sound
                 kissTriggered = true;
             }
         }
