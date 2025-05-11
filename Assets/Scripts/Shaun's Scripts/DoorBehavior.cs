@@ -37,9 +37,9 @@ public class DoorBehavior : MonoBehaviour
         moveDistanceR = Vector3.Distance(startingPosR, endingPosR);
 
 
-        print(startingPosL); 
-        print(endingPosL);
-        print(endingPosR);
+        //print(startingPosL); 
+        //print(endingPosL);
+        //print(endingPosR);
 
     }
 

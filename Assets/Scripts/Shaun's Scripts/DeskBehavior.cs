@@ -30,7 +30,7 @@ public class DeskBehavior : MonoBehaviour
         {
            
             seatStatus.Add(true);
-            Debug.Log(seat);
+            //Debug.Log(seat);
         }
     }
     public static Transform CheckOccupied()

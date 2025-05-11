@@ -110,7 +110,7 @@ public class RoomSpawnerScript : MonoBehaviour
         Vector3 OGCamPos = Camera.transform.position;
         GameObject spawnedParticleSpawner = Instantiate(ParticleSpawner);
         spawnedParticleSpawner.transform.position = obj.transform.position;
-        print("Spawner created at coords | x:" + obj.transform.position.x + ", y: " + obj.transform.position.y + ", z: " + obj.transform.position.z);
+        //print("Spawner created at coords | x:" + obj.transform.position.x + ", y: " + obj.transform.position.y + ", z: " + obj.transform.position.z);
         if (isWall)
         {
             audiosource.PlayOneShot(fallingsfx);

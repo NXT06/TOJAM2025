@@ -34,7 +34,7 @@ public class WallScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2.95f);
         ChooseMat();
-        print(transform.position.y);
+        //print(transform.position.y);
         Vector3 startPos = transform.position;
         Vector3 endPos = startPos;
 
