@@ -25,7 +25,11 @@ public class GameManager : MonoBehaviour
 
     int currentDoorIndex;
 
-    public static bool elevatorOpen = false; 
+    public static bool elevatorOpen = false;
+
+    public AudioSource audioFX;
+    public AudioSource audioMusic;
+    public AudioClip elevatorDing;
 
     public void startGame()
     {
@@ -35,7 +39,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(spawnCoworker());
         StartCoroutine(initializeGame());
         
-        
+        audioMusic.Play();
         
         
         
@@ -63,6 +67,8 @@ public class GameManager : MonoBehaviour
         menuCamera.SetActive(false);
         StartCoroutine(hideUI());
         print("opening elevator");
+        audioFX.clip = elevatorDing;
+        audioFX.Play();
         yield return new WaitForSeconds(4); 
         elevatorOpen = true;
         yield return new WaitForSeconds(1);
@@ -87,7 +93,9 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(coworkerSpawnTime);
             elevatorOpen = true;
-            print("opening elevator"); 
+            print("opening elevator");
+            audioFX.clip = elevatorDing;
+            audioFX.Play();
             int rand = Random.Range(0, 2);
             if (rand == 0)
                 Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);

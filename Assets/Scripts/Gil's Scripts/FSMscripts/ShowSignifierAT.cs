@@ -15,9 +15,6 @@ namespace NodeCanvas.Tasks.Actions {
 			EndAction(true);
 		}
 
-		protected override void OnStop() {
-            signifier.value.sprite = null;
-		}
 
 	}
 }
