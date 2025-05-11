@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; 
 
 public class GameManager : MonoBehaviour
@@ -20,8 +21,14 @@ public class GameManager : MonoBehaviour
     public GameObject coworkerPrefab3;
 
     public GameObject playerPrefab; 
-    public CanvasGroup canvas; 
-    public float coworkerSpawnTime; 
+    public CanvasGroup canvas1;
+    public CanvasGroup canvas2;
+    public GameObject canvas2Object; 
+    public float coworkerSpawnTime;
+
+    public GameObject winScreen;
+    public GameObject loseScreen;
+    public GameObject endWindow; 
 
     int currentDoorIndex;
 
@@ -40,18 +47,78 @@ public class GameManager : MonoBehaviour
         
         
     }
+    private void Update()
+    {
+        if (!Timer.timerStatus)
+        {
+            EndScreen(true); 
+        }
+        if (!Sliders.sliderStatus)
+        {
+            EndScreen(false);
+        }
+        if(Lives.lives <= 0)
+        {
+            EndScreen(false); 
+        }
+    }
+
+    public void QuitGame()
+    {
+
+        Application.Quit();
+    }
 
     // Update is called once per frame
     private IEnumerator hideUI()
     {
-        while (canvas.alpha > 0)
+
+        while (canvas1.alpha > 0)
         {
-            canvas.alpha -= Time.deltaTime;
-            canvas.interactable = false;
+            canvas1.alpha -= Time.deltaTime;
+            canvas1.interactable = false;
             yield return new WaitForEndOfFrame();
            // print(canvas.alpha);
         }
-        if(canvas.alpha <= 0)
+        if(canvas1.alpha <= 0)
+        {
+            yield return null;
+        }
+
+
+    }
+
+    public void EndScreen(bool winLose)
+    {
+        endWindow.SetActive(true); 
+        if (winLose)
+        {
+            winScreen.SetActive(true);
+            
+        }
+        else
+        {
+            loseScreen.SetActive(true);
+        }
+
+    }
+    public void RestartGame()
+    {
+
+        SceneManager.LoadScene("MainScene");
+
+    }
+    private IEnumerator showUI()
+    {
+        
+        while (canvas2.alpha < 1)
+        {
+            canvas2.alpha += Time.deltaTime;
+            canvas2.interactable = false;
+            yield return new WaitForEndOfFrame();
+            // print(canvas.alpha);
+        }
+        if (canvas2.alpha >= 1)
         {
             yield return null;
         }
@@ -63,7 +130,9 @@ public class GameManager : MonoBehaviour
         menuCamera.SetActive(false);
         StartCoroutine(hideUI());
         print("opening elevator");
-        yield return new WaitForSeconds(4); 
+        yield return new WaitForSeconds(4);
+        canvas2Object.SetActive(true);
+        StartCoroutine (showUI());
         elevatorOpen = true;
         yield return new WaitForSeconds(1);
         

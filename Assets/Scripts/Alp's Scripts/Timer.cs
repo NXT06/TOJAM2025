@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     string minute0, second0;
     string timePeriod;
     bool stop = false;
+
+    public static bool timerStatus = true; 
     //private IEnumerator coroutine;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,7 @@ public class Timer : MonoBehaviour
         //Starts counting time
         if (!stop)
         {
-            time += Time.deltaTime;
+            time += Time.deltaTime * 1.5f;
         }
         //Debug.Log(Time.deltaTime);
         //Sets float to int and divides by 60 for minutes
@@ -64,6 +66,7 @@ public class Timer : MonoBehaviour
         if (minutes == 5)
         {
             stop = true;
+            timerStatus = false;
         }
         text.text = minute0 + minutes + ":" + second0 + seconds + " " + timePeriod;
     }
