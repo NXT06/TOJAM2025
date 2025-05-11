@@ -90,6 +90,7 @@ public class Lives : MonoBehaviour
                     break;
                 case 2:
                     t = 0;
+                    spriteRef.GetComponent<RectTransform>().localScale = new(1.2f,1,1);
                     spriteRef.sprite = sprite3;
                     animating = true;
                     couroutineFinished = false;
@@ -99,6 +100,7 @@ public class Lives : MonoBehaviour
                 case 3:
                     StopCoroutine(coroutine);
                     t = 0;
+                    spriteRef.GetComponent<RectTransform>().localScale = new(1.25f, 1, 1);
                     animating = false;
                     couroutineFinished = false;
                     Debug.Log("Case 3");
