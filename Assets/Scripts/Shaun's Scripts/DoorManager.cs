@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static int currentDoorSection = 1;
 
-    // Update is called once per frame
-    void Update()
+    [Range(1,2)]
+    public int currentDoorIndex = 1;
+    private void Update()
     {
-        
+      //  currentDoorSection = currentDoorIndex;
     }
 }
