@@ -28,7 +28,6 @@ namespace NodeCanvas.Tasks.Actions {
 
             targetTransform.value = target.transform;
            
-           
             EndAction(true);
         }
     }
