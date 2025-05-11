@@ -35,6 +35,7 @@ public class Lives : MonoBehaviour
         {
             if (animating)
             {
+                //life3.GetComponent<Animation>().Play();
                 coroutine = AnimationCouroutine(life3);
                 StartCoroutine(coroutine);
                 animating = false;
