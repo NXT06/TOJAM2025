@@ -32,11 +32,13 @@ namespace NodeCanvas.Tasks.Actions {
        
 			//rotate coworker
 			Vector3 playerToWorker = playerTransform.value.position - agent.transform.position;
+			playerToWorker.y = 0;
 			Quaternion targetRotation1 = Quaternion.LookRotation(playerToWorker.normalized);
             agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, targetRotation1, rotationSpeed * Time.deltaTime);
 
 			//rotate player
 			Vector3 workerToPlayer = agent.transform.position - playerTransform.value.position;
+			workerToPlayer.y = 0;
             Quaternion targetRotation2 = Quaternion.LookRotation(workerToPlayer.normalized);
             playerTransform.value.rotation = Quaternion.Slerp(playerTransform.value.rotation, targetRotation2, rotationSpeed * Time.deltaTime);
 
