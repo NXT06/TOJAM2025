@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8837147729278777504}
   - component: {fileID: 1087641972205534523}
+  - component: {fileID: 5815037656352511779}
   - component: {fileID: 1153584659136408378}
   - component: {fileID: 9032308904397417442}
   - component: {fileID: 7416627098262958929}
-  - component: {fileID: 5815037656352511779}
   m_Layer: 0
   m_Name: RavWallEXT
   m_TagString: Untagged
@@ -1073,11 +1073,37 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 32
+  m_VersionIndex: 35
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &5815037656352511779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782649294063027858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6fe5526c52cfe47a988cf5113e11e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSpawner: {fileID: 0}
+  firstWall: {fileID: 3569003368164520444}
+  secondWall: {fileID: 1096284204510343172}
+  DoorLeft: {fileID: 0}
+  DoorRight: {fileID: 0}
+  fallingCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mat1: 0
+  mat2: 0
+  meshRenderer: {fileID: 0}
 --- !u!23 &1153584659136408378
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1150,22 +1176,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &5815037656352511779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5782649294063027858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6fe5526c52cfe47a988cf5113e11e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstWall: {fileID: 0}
-  secondWall: {fileID: 0}
-  DoorLeft: {fileID: 0}
-  DoorRight: {fileID: 0}
 --- !u!1001 &285874659918400853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1250,6 +1260,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 285874659918400853}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1096284204510343172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f989ad89bf1c4d4bb49000d28412804,
+    type: 3}
+  m_PrefabInstance: {fileID: 285874659918400853}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4415441294236798125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1276,7 +1292,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0374225f14e01ed4683faa42f91a7003,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0374225f14e01ed4683faa42f91a7003,
         type: 3}
@@ -1328,6 +1344,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0374225f14e01ed4683faa42f91a7003, type: 3}
+--- !u!1 &3569003368164520444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0374225f14e01ed4683faa42f91a7003,
+    type: 3}
+  m_PrefabInstance: {fileID: 4415441294236798125}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4236890043633773382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0374225f14e01ed4683faa42f91a7003,

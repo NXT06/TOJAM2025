@@ -8,7 +8,8 @@ public class RoomSpawnerScript : MonoBehaviour
 {
     public List<GameObject> roomList = new List<GameObject>();
     private List<Vector3> roomCoordinatesList = new List<Vector3>();
-    private List<Vector3> wallCoordinatesList = new List<Vector3>();
+    //private List<Vector3> wallCoordinatesList = new List<Vector3>();
+    public List<WallScript> wallScripts = new List<WallScript>();
     public List<Material> materialList = new List<Material>();
     public GameObject wallPrefab;
     public AudioClip fallingsfx;
@@ -21,7 +22,7 @@ public class RoomSpawnerScript : MonoBehaviour
     {
         audiosource = gameObject.GetComponent<AudioSource>();
         createRoomCoordList();
-        createWallCoordList();
+        //createWallCoordList();
         while (usedRoomsList.Count < 8)
         {
             int rand = Random.Range(1, 9);
@@ -50,16 +51,15 @@ public class RoomSpawnerScript : MonoBehaviour
             {
                 GameObject room = Instantiate(roomList[usedRoomsList[count - 1]]);
                 Vector3 upperPosition = roomCoordinatesList[count];
-                upperPosition.y = 50;
+                upperPosition.y = 100;
                 room.transform.position = upperPosition;
-                StartCoroutine(RoomSpawning(room, roomCoordinatesList[count]));
+                StartCoroutine(RoomSpawning(room, roomCoordinatesList[count], true));
                 yield return new WaitForSeconds(0.15f);
 
             }
         }
-        StartCoroutine(WallSpawner());
     }
-    public IEnumerator RoomSpawning(GameObject spawnedRoom, Vector3 endPos)
+    public IEnumerator RoomSpawning(GameObject spawnedRoom, Vector3 endPos, bool isWall)
     {
 
         Vector3 StartPos = spawnedRoom.transform.position;
@@ -68,7 +68,7 @@ public class RoomSpawnerScript : MonoBehaviour
         {
             t += Time.deltaTime * 0.5f;
             spawnedRoom.transform.position = Vector3.Lerp(StartPos, endPos, fallingAnimation.Evaluate(t));
-            if (t > 1)
+            if (t > 1 && isWall)
             {
                 StartCoroutine(RoomLanded());
             }
@@ -76,7 +76,7 @@ public class RoomSpawnerScript : MonoBehaviour
         }
 
     }
-
+    /*
     public IEnumerator WallSpawner()
     {
         int i = 0;
@@ -86,22 +86,20 @@ public class RoomSpawnerScript : MonoBehaviour
             {
                 i++;
                 GameObject spawnedWall = Instantiate(wallPrefab);
+                WallScript wallScript = spawnedWall.GetComponent<WallScript>();
                 Vector3 Upperposition = j;
-                Upperposition.y = 50;
+                Upperposition.y = 100;
                 spawnedWall.transform.position = Upperposition;
                 if (i == 2 || (i > 3 && i < 6) || (i > 7 && i < 11) || (i > 13 && i < 17) || (i > 21))
                 {
-                    WallScript wallScript = spawnedWall.GetComponent<WallScript>();
                     wallScript.rotateWallRightAngle();
                 }
-                StartCoroutine(RoomSpawning(spawnedWall, j));
-                yield return new WaitForSeconds(0.15f);
+                StartCoroutine(RoomSpawning(spawnedWall, j, false));
             }
         }
         yield return null;
-    }
+    }*/
 
-   
 
 
     public bool NoUsedRooms(int rand)
@@ -122,7 +120,7 @@ public class RoomSpawnerScript : MonoBehaviour
         Vector3 upperPosition = roomCoordinatesList[0];
         upperPosition.y = 50;
         room.transform.position = upperPosition;
-        StartCoroutine(RoomSpawning(room, roomCoordinatesList[0]));
+        StartCoroutine(RoomSpawning(room, roomCoordinatesList[0], true));
     }
 
     public IEnumerator RoomLanded()
@@ -144,7 +142,7 @@ public class RoomSpawnerScript : MonoBehaviour
 
     private float sineAmount(float t)
     {
-        return Mathf.Sin(t * 6 / 0.15f) * 0.2f;
+        return Mathf.Sin(t * 6 / 0.15f) * 0.1f;
     }
 
     private void createRoomCoordList()
@@ -159,7 +157,7 @@ public class RoomSpawnerScript : MonoBehaviour
         roomCoordinatesList.Add(new Vector3(20, -0.5f, 0));
         roomCoordinatesList.Add(new Vector3(10, -0.5f, 0));
     }
-
+    /*
     private void createWallCoordList()
     {
         wallCoordinatesList.Add(new Vector3(4.82999992f, 1.5854841e-05f, 12.0200005f)); //1
@@ -189,5 +187,5 @@ public class RoomSpawnerScript : MonoBehaviour
 
 
 
-    }
+    }*/
 }
