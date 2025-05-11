@@ -8,8 +8,11 @@ namespace NodeCanvas.Tasks.Actions {
 
 		public BBParameter<Transform> playerTransform;
 		private PlayerController playerController;
-		
-		public float kissDuration;
+
+		public float rotationSpeed;
+        private Quaternion currentRotation;
+
+        public float kissDuration;
 		private float kissTimer;
 		
 		protected override string OnInit()
@@ -23,11 +26,20 @@ namespace NodeCanvas.Tasks.Actions {
 		}
 
 		protected override void OnUpdate() {
-			//These are making them go on that slant
-			//agent.transform.LookAt(playerTransform.value.position);
-			//playerTransform.value.LookAt(agent.transform.position);
+       
+			//rotate coworker
+			Vector3 playerToWorker = playerTransform.value.position - agent.transform.position;
+			Quaternion targetRotation1 = Quaternion.LookRotation(playerToWorker.normalized);
+            agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, targetRotation1, rotationSpeed * Time.deltaTime);
 
-			kissTimer += Time.deltaTime;
+			//rotate player
+			Vector3 workerToPlayer = agent.transform.position - playerTransform.value.position;
+            Quaternion targetRotation2 = Quaternion.LookRotation(workerToPlayer.normalized);
+            playerTransform.value.rotation = Quaternion.Slerp(playerTransform.value.rotation, targetRotation2, rotationSpeed * Time.deltaTime);
+
+
+            //Kiss timer to turn player movement back on
+            kissTimer += Time.deltaTime;
 			if (kissTimer >= kissDuration)
 			{
 				playerController.isKissing = false;

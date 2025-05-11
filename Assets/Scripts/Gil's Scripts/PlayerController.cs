@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     public bool isKissing;
+    private bool kissTriggered;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isKissing)
         {
+            kissTriggered = false;
+
             currentRotation = transform.rotation;
 
             if (controller.isGrounded && playerVelocity.y < 0)
@@ -68,7 +71,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (isKissing)
         {
-            animator.SetTrigger("Kiss");
+            if (!kissTriggered)
+            {
+                animator.SetTrigger("Kiss");
+                kissTriggered = true;
+            }
         }
         
 
