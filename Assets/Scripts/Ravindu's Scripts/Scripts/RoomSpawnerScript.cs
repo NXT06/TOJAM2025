@@ -77,6 +77,10 @@ public class RoomSpawnerScript : MonoBehaviour
         }
 
     }
+    public void makeObjFall(GameObject spawnedRoom, Vector3 endPos, bool isWall)
+    {
+        StartCoroutine( RoomSpawning(spawnedRoom, endPos, isWall));
+    }
     /*
     public IEnumerator WallSpawner()
     {

@@ -35,18 +35,21 @@ public class WallScript : MonoBehaviour
         yield return new WaitForSeconds(2.95f);
         ChooseMat();
         float t = 0;
+        print(transform.position.y);
         Vector3 startPos = transform.position;
         Vector3 endPos = startPos;
-        endPos.y = (-26.78f);
-        while (t < 1)
+
+        endPos.y -= 100.13353f;
+        roomSpawner.makeObjFall(gameObject, endPos, false);
+        /*while (t < 1)
         {
+            t += Time.deltaTime *0.5f;
             print(startPos);
             print(endPos);
             print(t);
             transform.position = Vector3.Lerp(startPos, endPos, fallingCurve.Evaluate(t));
-            t += Time.deltaTime;
             yield return null;
-        }
+        }*/
     }
 
     public void ChooseMat()
