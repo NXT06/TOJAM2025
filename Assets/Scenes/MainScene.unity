@@ -9222,7 +9222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1147422801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9286,6 +9286,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Camera: {fileID: 857745190}
+  ParticleSpawner: {fileID: 0}
 --- !u!82 &1147422802
 AudioSource:
   m_ObjectHideFlags: 0
