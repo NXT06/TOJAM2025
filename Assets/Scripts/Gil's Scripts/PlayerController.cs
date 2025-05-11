@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
+    public bool isKissing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,41 +28,48 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentRotation = transform.rotation;
-
-        if (controller.isGrounded && playerVelocity.y < 0)
+        if (!isKissing)
         {
-            playerVelocity.y = 0f;
+            currentRotation = transform.rotation;
+
+            if (controller.isGrounded && playerVelocity.y < 0)
+            {
+                playerVelocity.y = 0f;
+            }
+
+            // Horizontal input
+            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            if (isometric)
+            {
+                move = Quaternion.Euler(0, 45, 0) * move;
+            }
+            move = Vector3.ClampMagnitude(move, 1f); //prevents faster diagonal movement
+
+            if (move != Vector3.zero)
+            {
+                //walking
+                animator.SetBool("isWalking", true);
+                transform.forward = move;
+                Quaternion targetRotation = Quaternion.LookRotation(move);
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.deltaTime);
+            }
+            else
+            {
+                //not walking
+                animator.SetBool("isWalking", false);
+            }
+
+            // Apply gravity
+            playerVelocity.y += gravityValue * Time.deltaTime;
+
+            // Combine horizontal and vertical movement
+            Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
+            controller.Move(finalMove * Time.deltaTime);
         }
-
-        // Horizontal input
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        if (isometric)
+        else if (isKissing)
         {
-            move = Quaternion.Euler(0, 45, 0) * move;
+            animator.SetTrigger("Kiss");
         }
-        move = Vector3.ClampMagnitude(move, 1f); //prevents faster diagonal movement
-
-        if (move != Vector3.zero)
-        {
-            //walking
-            animator.SetBool("isWalking", true);
-            transform.forward = move;
-            Quaternion targetRotation = Quaternion.LookRotation(move);
-            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.deltaTime);
-        } else
-        {
-            //not walking
-            animator.SetBool("isWalking", false);
-        }
-
-        // Apply gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
-
-        // Combine horizontal and vertical movement
-        Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
-        controller.Move(finalMove * Time.deltaTime);
-
         
 
     }
