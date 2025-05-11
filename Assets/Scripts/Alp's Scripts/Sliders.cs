@@ -6,11 +6,15 @@ using UnityEngine.UI;
 public class Sliders : MonoBehaviour
 {
     public Slider slider;
-    public float t = 20f;
-    public float timer = 0f;
+    public static float t = 20f;
+    float timer = 0f;
+    public float startTime; 
+
+    public static bool sliderStatus = true; 
     // Start is called before the first frame update
     void Start()
     {
+        t = startTime;
         slider = GetComponent<Slider>();
         StartCoroutine(Timer());
     }
@@ -23,17 +27,22 @@ public class Sliders : MonoBehaviour
 
     public void kiss()
     {
-        t = 20f;
+        t = 40f;
     }
 
     private IEnumerator Timer()
     {
-        t = 20f;
+        
         while (t > timer)
         {
+            t = Mathf.Clamp(t, -1, 40f);
             t -= Time.deltaTime;
             slider.value = t;
             yield return null;
+        }
+        if(t <= 0)
+        {
+            sliderStatus = false;
         }
     }
 }
