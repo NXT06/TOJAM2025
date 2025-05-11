@@ -1,15 +1,17 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class TakeHitAT : ActionTask {
+	public class DieAT : ActionTask {
 
 		protected override void OnExecute() {
-            Lives.Hit();
-            EndAction(true);
-        }
+			GameObject.Destroy(agent.gameObject);
+			EndAction(true);
+		}
+		
 
 	}
 }

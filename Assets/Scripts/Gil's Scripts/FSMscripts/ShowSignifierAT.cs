@@ -12,6 +12,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		protected override void OnExecute() {
             signifier.value.sprite = newSignifier;
+			EndAction(true);
 		}
 
 		protected override void OnStop() {

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BillboardingTarget
   - Exit
+  - Audio
   layers:
   - Default
   - TransparentFX
