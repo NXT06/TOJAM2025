@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
+using NodeCanvas.Framework;
+using ParadoxNotion.Design;
 using UnityEngine;
 
-public class FieldOfView : MonoBehaviour
+public class FieldOfView : MonoBehaviour 
 {
     public float radius;
     [Range(0,360)]
@@ -18,8 +20,13 @@ public class FieldOfView : MonoBehaviour
 
     public float meshResolution; 
 
+    Blackboard blackboard;
+
+   
+
     private void Start()
     {
+        blackboard = GetComponent<Blackboard>();
         playerRef = GameObject.FindGameObjectWithTag("Player"); 
         StartCoroutine(FOVRoutine()); 
     }
@@ -31,7 +38,9 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             yield return wait;
-            FieldOfViewCheck(); 
+            FieldOfViewCheck();
+            blackboard.SetVariableValue("PlayerInSight", canSeePlayer);
+            
         }
 
 
