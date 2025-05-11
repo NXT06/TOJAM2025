@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraSwitcherScript : MonoBehaviour
 {
+    public bool inMenuCam = true;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,17 @@ public class CameraSwitcherScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SwitchStates()
+    {
+        if (inMenuCam)
+        {
+            animator.Play("GameCam");
+        } else
+        {
+            animator.Play("MenuCam");
+        }
+        inMenuCam = !inMenuCam;
     }
 }

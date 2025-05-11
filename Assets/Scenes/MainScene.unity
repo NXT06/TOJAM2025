@@ -6409,7 +6409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779067368}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0070126695, y: -0.35478875, z: 0.0026577078, w: -0.9349165}
+  m_LocalRotation: {x: -0.0070126583, y: -0.35478875, z: 0.002657705, w: -0.9349165}
   m_LocalPosition: {x: 7.4206257, y: 70.47348, z: 7.774212}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12857,9 +12857,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1147422801}
         m_TargetAssemblyTypeName: RoomSpawnerScript, Assembly-CSharp
         m_MethodName: StartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1566808020}
+        m_TargetAssemblyTypeName: CameraSwitcherScript, Assembly-CSharp
+        m_MethodName: SwitchStates
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13189,6 +13201,7 @@ GameObject:
   - component: {fileID: 1566808019}
   - component: {fileID: 1566808018}
   - component: {fileID: 1566808017}
+  - component: {fileID: 1566808020}
   m_Layer: 0
   m_Name: State-Driven Camera
   m_TagString: Untagged
@@ -13284,6 +13297,20 @@ Transform:
   - {fileID: 1083025758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566808020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566808016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d3a619603ddf54fb9e36c3d523837e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inMenuCam: 1
+  animator: {fileID: 0}
 --- !u!4 &1585941131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c11de354df4de074f9e5a1b1e9bce047,
