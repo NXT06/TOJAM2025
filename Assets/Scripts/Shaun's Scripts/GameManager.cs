@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public float doorSwitchTime = 10f;
 
+    public Transform elevatorSpawn;
+    public GameObject coworkerPrefab; 
+    public GameObject coworkerPrefab2;
+    public float coworkerSpawnTime; 
+
     int currentDoorIndex; 
 
     void Start()
@@ -13,12 +18,27 @@ public class GameManager : MonoBehaviour
         currentDoorIndex = DoorManager.currentDoorSection;
 
         StartCoroutine(SwitchDoors()); 
+        StartCoroutine(spawnCoworker());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    private IEnumerator spawnCoworker()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(coworkerSpawnTime);
+            int rand = Random.Range(0, 1);
+            if (rand == 0)
+                Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
+            else
+                Instantiate(coworkerPrefab2, elevatorSpawn.position, transform.rotation, null);
+            print("spawned");
+        }
+
     }
 
     private IEnumerator SwitchDoors()
