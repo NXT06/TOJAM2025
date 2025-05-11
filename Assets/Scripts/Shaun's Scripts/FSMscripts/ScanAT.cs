@@ -17,10 +17,13 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<SpriteRenderer> spriteRenderer;
         public BBParameter<Animator> animator;
         public BBParameter<Light> visionConeLight;
+        public BBParameter<AudioSource> audioSource;
 
         protected override void OnExecute()
         {
             playerTransform.value = GameObject.FindWithTag("Player").transform;
+            audioSource.value = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+
             navAgent.value = agent.GetComponent<NavMeshAgent>();
             visionConeLight.value = agent.GetComponentInChildren<Light>();
             animator.value = agent.GetComponentInChildren<Animator>();

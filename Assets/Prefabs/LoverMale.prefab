@@ -1779,7 +1779,8 @@ MonoBehaviour:
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ExitPosition":{"_name":"ExitPosition","_id":"43732785-d4f8-4e92-9142-89a110e368f1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"WorkTimeRange":{"_value":{"x":10.0,"y":20.0},"_name":"WorkTimeRange","_id":"b7caf3f4-faca-47bb-a498-217f894d99f9","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector2,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"WanderTimeRange":{"_value":{"x":7.0,"y":17.0},"_name":"WanderTimeRange","_id":"fbfc5f6a-8390-488b-8783-95f52ba5f0b3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector2,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"AudioSource":{"_name":"AudioSource","_id":"ce35a868-6a86-4676-9428-490d23ecd478","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
+    UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
   _serializedVariables:
   - _json: '{"_name":"Seat","_id":"48dd51a3-d5bb-4f95-928d-9c741c6ad6aa","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
@@ -1814,4 +1815,7 @@ MonoBehaviour:
     _references: []
   - _json: '{"_value":{"x":7.0,"y":17.0},"_name":"WanderTimeRange","_id":"fbfc5f6a-8390-488b-8783-95f52ba5f0b3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector2,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+  - _json: '{"_name":"AudioSource","_id":"ce35a868-6a86-4676-9428-490d23ecd478","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
+      UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
