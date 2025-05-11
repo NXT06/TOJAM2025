@@ -1773,7 +1773,7 @@ MonoBehaviour:
     UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"PlayerTransform":{"_name":"PlayerTransform","_id":"df4135f6-7b98-40de-93dc-49960ef83654","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"PlayerInSight":{"_name":"PlayerInSight","_id":"adc7b335-f0b2-4c24-b113-809b01fd0e10","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Signifier":{"_name":"Signifier","_id":"adf21b26-4330-4a8d-ac0e-988f59c9d10f","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.SpriteRenderer,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"KissRange":{"_value":0.25,"_name":"KissRange","_id":"d4a23e1d-7f21-4eac-abcb-78c94e05d131","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"KissRange":{"_value":2.0,"_name":"KissRange","_id":"d4a23e1d-7f21-4eac-abcb-78c94e05d131","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Animator":{"_name":"Animator","_id":"b0a50844-4460-442e-8a4f-445437cc54c3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
     UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"VisionConeLight":{"_name":"VisionConeLight","_id":"0789ae3a-3b92-43b0-8550-87b2f88236f3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Light,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ExitPosition":{"_name":"ExitPosition","_id":"43732785-d4f8-4e92-9142-89a110e368f1","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   - _json: '{"_name":"Signifier","_id":"adf21b26-4330-4a8d-ac0e-988f59c9d10f","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.SpriteRenderer,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
-  - _json: '{"_value":0.25,"_name":"KissRange","_id":"d4a23e1d-7f21-4eac-abcb-78c94e05d131","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":2.0,"_name":"KissRange","_id":"d4a23e1d-7f21-4eac-abcb-78c94e05d131","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   - _json: '{"_name":"Animator","_id":"b0a50844-4460-442e-8a4f-445437cc54c3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
