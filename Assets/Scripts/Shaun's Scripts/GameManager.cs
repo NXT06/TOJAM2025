@@ -148,7 +148,8 @@ public class GameManager : MonoBehaviour
         
         playerPrefab.SetActive(true);
         Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
-        Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
+        //yield return new WaitForSeconds(1); 
+        //Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
         mapCamera.SetActive(false );
         isGameStarted = true;
         DeskBehavior.findSeats();
