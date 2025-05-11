@@ -23,6 +23,7 @@ public class RoomSpawnerScript : MonoBehaviour
     public void StartLevel()
     {
         audiosource = gameObject.GetComponent<AudioSource>();
+        audiosource.Play();
         createRoomCoordList();
         //createWallCoordList();
         usedRoomsList.Add(0);
