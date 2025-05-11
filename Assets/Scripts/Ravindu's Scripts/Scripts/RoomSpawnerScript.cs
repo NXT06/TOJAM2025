@@ -17,6 +17,7 @@ public class RoomSpawnerScript : MonoBehaviour
     public List<int> usedRoomsList = new List<int>();
     public AnimationCurve fallingAnimation;
     public GameObject Camera;
+    public GameObject ParticleSpawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +72,7 @@ public class RoomSpawnerScript : MonoBehaviour
             spawnedRoom.transform.position = Vector3.Lerp(StartPos, endPos, fallingAnimation.Evaluate(t));
             if (t > 1 && isWall)
             {
-                StartCoroutine(RoomLanded());
+                StartCoroutine(RoomLanded(spawnedRoom));
             }
             yield return null;
         }
@@ -128,12 +129,13 @@ public class RoomSpawnerScript : MonoBehaviour
         StartCoroutine(RoomSpawning(room, roomCoordinatesList[0], true));
     }
 
-    public IEnumerator RoomLanded()
+    public IEnumerator RoomLanded(GameObject obj)
     {
         audiosource.PlayOneShot(fallingsfx);
         float t = 0;
         Vector3 OGCamPos = Camera.transform.position;
-
+        GameObject spawnedParticleSpawner = Instantiate(ParticleSpawner);
+        spawnedParticleSpawner.transform.position = obj.transform.position;
         while (t < 0.15f)
         {
             Vector3 shake = Vector3.one * sineAmount(t);
@@ -141,6 +143,7 @@ public class RoomSpawnerScript : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
+        Destroy(spawnedParticleSpawner);
         Camera.transform.position = OGCamPos;
 
     }
