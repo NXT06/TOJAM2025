@@ -18,8 +18,9 @@ public class RoomSpawnerScript : MonoBehaviour
     public AnimationCurve fallingAnimation;
     public GameObject Camera;
     public GameObject ParticleSpawner;
-    // Start is called before the first frame update
-    void Start()
+
+
+    public void StartLevel()
     {
         audiosource = gameObject.GetComponent<AudioSource>();
         createRoomCoordList();
@@ -37,11 +38,6 @@ public class RoomSpawnerScript : MonoBehaviour
         StartCoroutine(PlayWallLandSound());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public IEnumerator RoomSpawnDelay()
     {
         SpawnCenterBlock();
