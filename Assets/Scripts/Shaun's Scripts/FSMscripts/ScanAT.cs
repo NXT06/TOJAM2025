@@ -16,11 +16,13 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<Transform> playerTransform;
         public BBParameter<SpriteRenderer> spriteRenderer;
         public BBParameter<Animator> animator;
+        public BBParameter<Light> visionConeLight;
 
         protected override void OnExecute()
         {
             playerTransform.value = GameObject.FindWithTag("Player").transform;
             navAgent.value = agent.GetComponent<NavMeshAgent>();
+            visionConeLight.value = agent.GetComponentInChildren<Light>();
             animator.value = agent.GetComponentInChildren<Animator>();
             spriteRenderer.value = agent.GetComponentInChildren<SpriteRenderer>();
 

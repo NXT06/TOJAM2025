@@ -14,7 +14,9 @@ namespace NodeCanvas.Tasks.Actions {
 
         public float kissDuration;
 		private float kissTimer;
-		
+
+		public BBParameter<Light> visionConeLight;
+
 		protected override string OnInit()
 		{
             playerController = playerTransform.value.gameObject.GetComponent<PlayerController>();
@@ -23,6 +25,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		protected override void OnExecute() {
 			playerController.isKissing = true;
+			kissTimer = 0;
 		}
 
 		protected override void OnUpdate() {
@@ -37,12 +40,17 @@ namespace NodeCanvas.Tasks.Actions {
             Quaternion targetRotation2 = Quaternion.LookRotation(workerToPlayer.normalized);
             playerTransform.value.rotation = Quaternion.Slerp(playerTransform.value.rotation, targetRotation2, rotationSpeed * Time.deltaTime);
 
+			//deactivate vision cone
+			visionConeLight.value.enabled = false;
 
             //Kiss timer to turn player movement back on
             kissTimer += Time.deltaTime;
 			if (kissTimer >= kissDuration)
 			{
-				playerController.isKissing = false;
+                //reactivate vision cone
+                visionConeLight.value.enabled = true;
+
+                playerController.isKissing = false;
 				EndAction(true);
 			}
 		}

@@ -14,7 +14,7 @@ public class RoomSpawnerScript : MonoBehaviour
     public GameObject wallPrefab;
     public AudioClip fallingsfx;
     private AudioSource audiosource;
-    private List<int> usedRoomsList = new List<int>();
+    public List<int> usedRoomsList = new List<int>();
     public AnimationCurve fallingAnimation;
     public GameObject Camera;
     // Start is called before the first frame update
@@ -23,9 +23,10 @@ public class RoomSpawnerScript : MonoBehaviour
         audiosource = gameObject.GetComponent<AudioSource>();
         createRoomCoordList();
         //createWallCoordList();
-        while (usedRoomsList.Count < 8)
+        usedRoomsList.Add(0);
+        while (usedRoomsList.Count < 9)
         {
-            int rand = Random.Range(1, 9);
+            int rand = (int)Random.Range(1, 9);
             if (NoUsedRooms(rand))
             {
                 usedRoomsList.Add(rand);
@@ -49,7 +50,7 @@ public class RoomSpawnerScript : MonoBehaviour
         {
             for (count = 1; count < 9; count++)
             {
-                GameObject room = Instantiate(roomList[usedRoomsList[count - 1]]);
+                GameObject room = Instantiate(roomList[usedRoomsList[count]]);
                 Vector3 upperPosition = roomCoordinatesList[count];
                 upperPosition.y = 100;
                 room.transform.position = upperPosition;
