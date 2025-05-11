@@ -596,6 +596,11 @@ PrefabInstance:
       propertyPath: roomSpawner
       value: 
       objectReference: {fileID: 391301474}
+    - target: {fileID: 5815037656352511779, guid: e98787cdc5fadce4f917ae9d8980a864,
+        type: 3}
+      propertyPath: fallingCurve.m_Curve.Array.data[1].value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7416627098262958929, guid: e98787cdc5fadce4f917ae9d8980a864,
         type: 3}
       propertyPath: m_Mesh
