@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
 
     public Transform elevatorSpawn;
     public Transform playerSpawn; 
-    public GameObject menuCamera; 
+    public GameObject menuCamera;
+    public GameObject mapCamera; 
 
     public GameObject coworkerPrefab; 
     public GameObject coworkerPrefab2;
@@ -64,10 +65,11 @@ public class GameManager : MonoBehaviour
         print("opening elevator");
         yield return new WaitForSeconds(4); 
         elevatorOpen = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         
-        Instantiate(playerPrefab, playerSpawn.position, transform.rotation, null);
+        playerPrefab.SetActive(true);
         Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
+        mapCamera.SetActive(false );
         isGameStarted = true;
         DeskBehavior.findSeats();
         yield return new WaitForSeconds(5);
