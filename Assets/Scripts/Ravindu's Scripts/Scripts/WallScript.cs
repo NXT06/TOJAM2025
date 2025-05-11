@@ -6,6 +6,7 @@ using UnityEngine.ProBuilder;
 public class WallScript : MonoBehaviour
 {
     public RoomSpawnerScript roomSpawner;
+    public bool isExtWall;
     public GameObject firstWall;
     public GameObject secondWall;
     public GameObject DoorLeft;
@@ -13,32 +14,35 @@ public class WallScript : MonoBehaviour
     public AnimationCurve fallingCurve;
     public int mat1;
     public int mat2;
-    public MeshRenderer meshRendererFirstWall;
-    public MeshRenderer meshRendererSecondWall;
+    private MeshRenderer meshRendererFirstWall;
+    private MeshRenderer meshRendererSecondWall;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(falling() );
         meshRendererFirstWall = firstWall.GetComponent<MeshRenderer>();
         meshRendererSecondWall = secondWall.GetComponent<MeshRenderer>();
+        StartCoroutine(falling());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public IEnumerator falling()
     {
-        yield return new WaitForSeconds(2.15f);
+        yield return new WaitForSeconds(2.95f);
         ChooseMat();
         float t = 0;
         Vector3 startPos = transform.position;
         Vector3 endPos = startPos;
-        endPos.y = 1.58548355e-05f;
+        endPos.y = (-26.78f);
         while (t < 1)
         {
+            print(startPos);
+            print(endPos);
+            print(t);
             transform.position = Vector3.Lerp(startPos, endPos, fallingCurve.Evaluate(t));
             t += Time.deltaTime;
             yield return null;
@@ -47,28 +51,27 @@ public class WallScript : MonoBehaviour
 
     public void ChooseMat()
     {
-        if(DoorLeft == null)
+        if (isExtWall)
         {
-            Material[] materials;
+            Material[] materialsSecond;
 
-            materials = meshRendererFirstWall.materials;
-            materials[1] = roomSpawner.materialList[mat1];
-            meshRendererFirstWall.materials = materials;
-
-            materials = meshRendererSecondWall.materials;
-            materials[0] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat2]];
-            meshRendererFirstWall.materials = materials;
-        } else
+            materialsSecond = meshRendererSecondWall.materials;
+            materialsSecond[0] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat2]];
+            meshRendererSecondWall.materials = materialsSecond;
+        }
+        if (!isExtWall)
         {
-            Material[] materials;
+            Material[] materialsFirst;
 
-            materials = meshRendererFirstWall.materials;
-            materials[1] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat1]];
-            meshRendererFirstWall.materials = materials;
+            materialsFirst = meshRendererFirstWall.materials;
+            materialsFirst[1] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat1]];
+            meshRendererFirstWall.materials = materialsFirst;
 
-            materials = meshRendererSecondWall.materials;
-            materials[1] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat2]];
-            meshRendererFirstWall.materials = materials;
+            Material[] materialsSecond;
+
+            materialsSecond = meshRendererSecondWall.materials;
+            materialsSecond[1] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat2]];
+            meshRendererSecondWall.materials = materialsSecond;
 
         }
     }
