@@ -1,6 +1,7 @@
 using NodeCanvas.Tasks.Actions;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeskBehavior : MonoBehaviour
@@ -9,14 +10,20 @@ public class DeskBehavior : MonoBehaviour
 
     public LayerMask seatLayer = -1;
 
+    public static LayerMask currentLayer; 
+
     public static Collider[] seats;
     
     public static List<bool> seatStatus = new List<bool>();
 
     private void Awake()
     {
+        currentLayer = seatLayer; 
+    }
+    public static void findSeats()
+    {
         //scans the area for the chosen targetLayer
-        seats = Physics.OverlapSphere(transform.position, 500, seatLayer);
+        seats = Physics.OverlapSphere(Vector3.zero, 500, currentLayer);
 
 
         foreach (Collider seat in seats)

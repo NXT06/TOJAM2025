@@ -40,13 +40,7 @@ public class RoomSpawnerScript : MonoBehaviour
             w.StartWalls();
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartLevel();
-        }
-    }
+   
 
     public IEnumerator RoomSpawnDelay()
     {
