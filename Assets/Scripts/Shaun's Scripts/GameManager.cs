@@ -49,17 +49,25 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (!Timer.timerStatus)
+        if (isGameStarted)
         {
-            EndScreen(true); 
-        }
-        if (!Sliders.sliderStatus)
-        {
-            EndScreen(false);
-        }
-        if(Lives.lives <= 0)
-        {
-            EndScreen(false); 
+
+
+            if (!Timer.timerStatus)
+            {
+                print("win"); 
+                EndScreen(true);
+            }
+            if (!Sliders.sliderStatus)
+            {
+                print("notime");
+                EndScreen(false);
+            }
+            if (Lives.lives <= 0)
+            {
+                print("nolives"); 
+                EndScreen(false);
+            }
         }
     }
 
@@ -90,6 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void EndScreen(bool winLose)
     {
+        isGameStarted = false;
         endWindow.SetActive(true); 
         if (winLose)
         {
@@ -104,7 +113,8 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
-
+        isGameStarted = false ;
+        endWindow.SetActive(false);
         SceneManager.LoadScene("MainScene");
 
     }
@@ -137,6 +147,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         
         playerPrefab.SetActive(true);
+        Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
         Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
         mapCamera.SetActive(false );
         isGameStarted = true;

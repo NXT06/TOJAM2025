@@ -10401,8 +10401,13 @@ MonoBehaviour:
   coworkerPrefab3: {fileID: 9150754147254246460, guid: 7f0bb0228338270478a2739e60970a15,
     type: 3}
   playerPrefab: {fileID: 4907932046342506049}
-  canvas: {fileID: 657020752}
+  canvas1: {fileID: 0}
+  canvas2: {fileID: 0}
+  canvas2Object: {fileID: 0}
   coworkerSpawnTime: 20
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
+  endWindow: {fileID: 0}
 --- !u!114 &1481563464
 MonoBehaviour:
   m_ObjectHideFlags: 0
