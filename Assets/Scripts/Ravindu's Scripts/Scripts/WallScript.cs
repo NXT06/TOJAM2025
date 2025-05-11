@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class WallScript : MonoBehaviour
 {
@@ -12,13 +13,14 @@ public class WallScript : MonoBehaviour
     public AnimationCurve fallingCurve;
     public int mat1;
     public int mat2;
-    public MeshRenderer meshRenderer;
+    public MeshRenderer meshRendererFirstWall;
+    public MeshRenderer meshRendererSecondWall;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(falling() );
-        meshRenderer = GetComponent<MeshRenderer>();
-        ChooseMat();
+        meshRendererFirstWall = firstWall.GetComponent<MeshRenderer>();
+        meshRendererSecondWall = secondWall.GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,8 @@ public class WallScript : MonoBehaviour
 
     public IEnumerator falling()
     {
+        yield return new WaitForSeconds(2.15f);
+        ChooseMat();
         float t = 0;
         Vector3 startPos = transform.position;
         Vector3 endPos = startPos;
@@ -43,8 +47,30 @@ public class WallScript : MonoBehaviour
 
     public void ChooseMat()
     {
-        meshRenderer.materials.SetValue(roomSpawner.materialList[mat1], 1);
-        meshRenderer.materials.SetValue(roomSpawner.materialList[mat2], 2);
+        if(DoorLeft == null)
+        {
+            Material[] materials;
+
+            materials = meshRendererFirstWall.materials;
+            materials[1] = roomSpawner.materialList[mat1];
+            meshRendererFirstWall.materials = materials;
+
+            materials = meshRendererSecondWall.materials;
+            materials[0] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat2]];
+            meshRendererFirstWall.materials = materials;
+        } else
+        {
+            Material[] materials;
+
+            materials = meshRendererFirstWall.materials;
+            materials[1] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat1]];
+            meshRendererFirstWall.materials = materials;
+
+            materials = meshRendererSecondWall.materials;
+            materials[1] = roomSpawner.materialList[roomSpawner.usedRoomsList[mat2]];
+            meshRendererFirstWall.materials = materials;
+
+        }
     }
 
     /*public void rotateWallRightAngle()

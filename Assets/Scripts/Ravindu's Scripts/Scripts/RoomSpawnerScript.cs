@@ -14,7 +14,7 @@ public class RoomSpawnerScript : MonoBehaviour
     public GameObject wallPrefab;
     public AudioClip fallingsfx;
     private AudioSource audiosource;
-    private List<int> usedRoomsList = new List<int>();
+    public List<int> usedRoomsList = new List<int>();
     public AnimationCurve fallingAnimation;
     public GameObject Camera;
     // Start is called before the first frame update
