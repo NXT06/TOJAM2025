@@ -34,7 +34,7 @@ public class RoomSpawnerScript : MonoBehaviour
             }
         }
         StartCoroutine(RoomSpawnDelay());
-
+        StartCoroutine(PlayWallLandSound());
     }
 
     // Update is called once per frame
@@ -70,9 +70,9 @@ public class RoomSpawnerScript : MonoBehaviour
         {
             t += Time.deltaTime * 0.5f;
             spawnedRoom.transform.position = Vector3.Lerp(StartPos, endPos, fallingAnimation.Evaluate(t));
-            if (t > 1 && isWall)
+            if (t > 1)
             {
-                StartCoroutine(RoomLanded(spawnedRoom));
+                StartCoroutine(RoomLanded(spawnedRoom, isWall));
             }
             yield return null;
         }
@@ -82,32 +82,6 @@ public class RoomSpawnerScript : MonoBehaviour
     {
         StartCoroutine( RoomSpawning(spawnedRoom, endPos, isWall));
     }
-    /*
-    public IEnumerator WallSpawner()
-    {
-        int i = 0;
-        while (i < 24)
-        {
-            foreach (Vector3 j in wallCoordinatesList)
-            {
-                i++;
-                GameObject spawnedWall = Instantiate(wallPrefab);
-                WallScript wallScript = spawnedWall.GetComponent<WallScript>();
-                Vector3 Upperposition = j;
-                Upperposition.y = 100;
-                spawnedWall.transform.position = Upperposition;
-                if (i == 2 || (i > 3 && i < 6) || (i > 7 && i < 11) || (i > 13 && i < 17) || (i > 21))
-                {
-                    wallScript.rotateWallRightAngle();
-                }
-                StartCoroutine(RoomSpawning(spawnedWall, j, false));
-            }
-        }
-        yield return null;
-    }*/
-
-
-
     public bool NoUsedRooms(int rand)
     {
         foreach (int i in usedRoomsList)
@@ -129,23 +103,42 @@ public class RoomSpawnerScript : MonoBehaviour
         StartCoroutine(RoomSpawning(room, roomCoordinatesList[0], true));
     }
 
-    public IEnumerator RoomLanded(GameObject obj)
+    public IEnumerator RoomLanded(GameObject obj, bool isWall)
     {
-        audiosource.PlayOneShot(fallingsfx);
+        
         float t = 0;
         Vector3 OGCamPos = Camera.transform.position;
         GameObject spawnedParticleSpawner = Instantiate(ParticleSpawner);
         spawnedParticleSpawner.transform.position = obj.transform.position;
-        while (t < 0.15f)
+        print("Spawner created at coords | x:" + obj.transform.position.x + ", y: " + obj.transform.position.y + ", z: " + obj.transform.position.z);
+        if (isWall)
         {
-            Vector3 shake = Vector3.one * sineAmount(t);
-            Camera.transform.position = OGCamPos + shake;
-            t += Time.deltaTime;
-            yield return null;
+            audiosource.PlayOneShot(fallingsfx);
+            while (t < 0.15f)
+            {
+                Vector3 shake = Vector3.one * sineAmount(t);
+                Camera.transform.position = OGCamPos + shake;
+                t += Time.deltaTime;
+                yield return null;
+            }
+        } else
+        {
+            yield return new WaitForSeconds(0.1f);
         }
         Destroy(spawnedParticleSpawner);
         Camera.transform.position = OGCamPos;
+    }
 
+    public IEnumerator PlayWallLandSound()
+    {
+        float t = 0;
+        while (t < 4.95f)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        audiosource.PlayOneShot(fallingsfx);
+ 
     }
 
     private float sineAmount(float t)
