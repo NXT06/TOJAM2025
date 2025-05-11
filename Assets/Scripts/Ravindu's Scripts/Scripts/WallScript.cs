@@ -17,7 +17,7 @@ public class WallScript : MonoBehaviour
     private MeshRenderer meshRendererFirstWall;
     private MeshRenderer meshRendererSecondWall;
     // Start is called before the first frame update
-    void Start()
+    public void StartWalls()
     {
         meshRendererFirstWall = firstWall.GetComponent<MeshRenderer>();
         meshRendererSecondWall = secondWall.GetComponent<MeshRenderer>();

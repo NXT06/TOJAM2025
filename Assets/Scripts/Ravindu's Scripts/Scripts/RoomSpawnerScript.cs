@@ -8,9 +8,8 @@ public class RoomSpawnerScript : MonoBehaviour
 {
     public List<GameObject> roomList = new List<GameObject>();
     private List<Vector3> roomCoordinatesList = new List<Vector3>();
-    //private List<Vector3> wallCoordinatesList = new List<Vector3>();
-    public List<WallScript> wallScripts = new List<WallScript>();
     public List<Material> materialList = new List<Material>();
+    public List<WallScript> wallsList = new List<WallScript>();
     public GameObject wallPrefab;
     public AudioClip fallingsfx;
     private AudioSource audiosource;
@@ -25,7 +24,6 @@ public class RoomSpawnerScript : MonoBehaviour
         audiosource = gameObject.GetComponent<AudioSource>();
         audiosource.Play();
         createRoomCoordList();
-        //createWallCoordList();
         usedRoomsList.Add(0);
         while (usedRoomsList.Count < 9)
         {
@@ -37,6 +35,17 @@ public class RoomSpawnerScript : MonoBehaviour
         }
         StartCoroutine(RoomSpawnDelay());
         StartCoroutine(PlayWallLandSound());
+        foreach (WallScript w in wallsList)
+        {
+            w.StartWalls();
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartLevel();
+        }
     }
 
     public IEnumerator RoomSpawnDelay()
@@ -155,35 +164,5 @@ public class RoomSpawnerScript : MonoBehaviour
         roomCoordinatesList.Add(new Vector3(20, -0.5f, 0));
         roomCoordinatesList.Add(new Vector3(10, -0.5f, 0));
     }
-    /*
-    private void createWallCoordList()
-    {
-        wallCoordinatesList.Add(new Vector3(4.82999992f, 1.5854841e-05f, 12.0200005f)); //1
-        wallCoordinatesList.Add(new Vector3(11.969986f, 1.58548355e-05f, 15.140192f));//2
-        wallCoordinatesList.Add(new Vector3(14.8299122f, 1.58548355e-05f, 11.9999943f));//3
-        wallCoordinatesList.Add(new Vector3(11.969986f, 1.58548355e-05f, 5.14019203f));//4
-        wallCoordinatesList.Add(new Vector3(2, 1.58548355e-05f, 5.13000011f));//5
-        wallCoordinatesList.Add(new Vector3(-5.14008617f, 1.58548355e-05f, 11.9999943f));//6
-        wallCoordinatesList.Add(new Vector3(-5.14008522f, 1.58548355e-05f, 21.9999924f));//7
-        wallCoordinatesList.Add(new Vector3(1.75000095f, 1.58548355e-05f, 24.8599205f));//8
-        wallCoordinatesList.Add(new Vector3(11.7500038f, 1.58548355e-05f, 24.8599205f));//9
-        wallCoordinatesList.Add(new Vector3(21.75f, 1.58548355e-05f, 24.8599205f));//10
-        wallCoordinatesList.Add(new Vector3(24.8599129f, 1.58548355e-05f, 21.9999924f));//11
-        wallCoordinatesList.Add(new Vector3(24.8599129f, 1.58548355e-05f, 11.9999943f));//12
-        wallCoordinatesList.Add(new Vector3(24.8599129f, 1.58548355e-05f, 1.95000005f));//13     1.58548355e-05f
-        wallCoordinatesList.Add(new Vector3(21.8999977f, 1.58548355e-05f, -5.14008045f));//14
-        wallCoordinatesList.Add(new Vector3(11.8999996f, 1.58548355e-05f, -5.14008045f));//15
-        wallCoordinatesList.Add(new Vector3(1.89999866f, 1.58548355e-05f, -5.14008045f));//16
-        wallCoordinatesList.Add(new Vector3(-5.14008522f, 1.58548355e-05f, 1.99999237f));//17
-        wallCoordinatesList.Add(new Vector3(4.82000017f, 1.58548355e-05f, 1.88f));//18 edited
-        wallCoordinatesList.Add(new Vector3(4.85991287f, 1.58548355e-05f, 21.9999924f));//19
-        wallCoordinatesList.Add(new Vector3(14.8599138f, 1.58548355e-05f, 21.9999943f));//20
-        wallCoordinatesList.Add(new Vector3(14.8500004f, 1.58548355e-05f, 1.97000003f));//21 edited
-        wallCoordinatesList.Add(new Vector3(21.8500004f, 1.58548355e-05f, 5.11000013f));//22
-        wallCoordinatesList.Add(new Vector3(21.8999996f, 1.58548355e-05f, 15.1300001f));//23
-        wallCoordinatesList.Add(new Vector3(1.83999991f, 1.58548355e-05f, 15.1400003f));//24
-
-
-
-    }*/
+    
 }
