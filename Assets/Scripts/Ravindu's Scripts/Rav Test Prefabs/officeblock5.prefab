@@ -4645,6 +4645,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.00000020191429
       objectReference: {fileID: 0}
+    - target: {fileID: 8601912454287348733, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      propertyPath: m_Name
+      value: Goat1
+      objectReference: {fileID: 0}
     - target: {fileID: 8602815874614883342, guid: cd143304510d2284b9f6a0cf08dbd04b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4848,6 +4853,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7598129354873070217}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 965703543367165532}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3582079354983296678}
   m_SourcePrefab: {fileID: 100100000, guid: cd143304510d2284b9f6a0cf08dbd04b, type: 3}
 --- !u!4 &3743953714407794452 stripped
 Transform:
@@ -4882,6 +4895,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!208 &965703543367165532
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088954816170540462}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.44}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &3582079354983296678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088954816170540462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.39, y: 2.17, z: 1.04}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4828793247112780856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8945,6 +8995,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.00000020191429
       objectReference: {fileID: 0}
+    - target: {fileID: 8601912454287348733, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      propertyPath: m_Name
+      value: Goat2
+      objectReference: {fileID: 0}
     - target: {fileID: 8602815874614883342, guid: cd143304510d2284b9f6a0cf08dbd04b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9148,6 +9203,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1213610949031514863}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2937537759370341687}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5561808447628607812}
   m_SourcePrefab: {fileID: 100100000, guid: cd143304510d2284b9f6a0cf08dbd04b, type: 3}
 --- !u!4 &4938734251912412115 stripped
 Transform:
@@ -9182,6 +9245,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!208 &2937537759370341687
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747217708063875433}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.86, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &5561808447628607812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747217708063875433}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.39, y: 1.33, z: 1}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1001 &5504563972659297238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13485,6 +13585,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.0000001742248
       objectReference: {fileID: 0}
+    - target: {fileID: 8601912454287348733, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      propertyPath: m_Name
+      value: Goat3
+      objectReference: {fileID: 0}
     - target: {fileID: 8602815874614883342, guid: cd143304510d2284b9f6a0cf08dbd04b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13688,6 +13793,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7094498050823101087}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3832052298025779074}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd143304510d2284b9f6a0cf08dbd04b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7397867597926679333}
   m_SourcePrefab: {fileID: 100100000, guid: cd143304510d2284b9f6a0cf08dbd04b, type: 3}
 --- !u!4 &6105304951067703518 stripped
 Transform:
@@ -13722,6 +13835,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!208 &3832052298025779074
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913507211396424292}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.805, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &7397867597926679333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913507211396424292}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.46, y: 1.67, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7250328192485077535
 PrefabInstance:
   m_ObjectHideFlags: 0
