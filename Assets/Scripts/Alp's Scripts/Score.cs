@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
     public static int kissCounter = 0;
+    
     public TextMeshProUGUI text;
     void Start()
     {

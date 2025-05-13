@@ -7,9 +7,6 @@ public class DoorManager : MonoBehaviour
     public static int currentDoorSection = 1;
 
     [Range(1,2)]
-    public int currentDoorIndex = 1;
-    private void Update()
-    {
-      //  currentDoorSection = currentDoorIndex;
-    }
+    public int currentDoorIndex = 1;    
+   
 }

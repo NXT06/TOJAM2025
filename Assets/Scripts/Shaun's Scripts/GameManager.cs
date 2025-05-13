@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void startGame()
     {
-        currentDoorIndex = DoorManager.currentDoorSection;
+        currentDoorIndex = 1; 
 
         StartCoroutine(SwitchDoors()); 
         StartCoroutine(spawnCoworker());
@@ -147,14 +147,16 @@ public class GameManager : MonoBehaviour
     {
         menuCamera.SetActive(false);
         StartCoroutine(hideUI());
-        print("opening elevator");
+       
         audioFX.clip = elevatorDing;
         audioFX.Play();
         yield return new WaitForSeconds(4);
         canvas2Object.SetActive(true);
         StartCoroutine (showUI());
         elevatorOpen = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
+        elevatorOpen = false;
+        
         
         playerPrefab.SetActive(true);
         Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
@@ -164,8 +166,10 @@ public class GameManager : MonoBehaviour
         isGameStarted = true;
         DeskBehavior.findSeats();
         yield return new WaitForSeconds(5);
-        print("closing elevator");
-        elevatorOpen = false; 
+        elevatorOpen = true;
+        yield return new WaitForSeconds(0.1f);
+        elevatorOpen = false;
+        
 
 
 
@@ -178,7 +182,9 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(coworkerSpawnTime);
             elevatorOpen = true;
-            print("opening elevator");
+            yield return new WaitForSeconds(0.1f);
+            elevatorOpen = false;
+          
             audioFX.clip = elevatorDing;
             audioFX.Play();
             int rand = Random.Range(0, 4);
@@ -190,8 +196,10 @@ public class GameManager : MonoBehaviour
                 Instantiate(coworkerPrefab3, elevatorSpawn.position, transform.rotation, null);
             //print("spawned");
             yield return new WaitForSeconds(5f);
-            print("closing elevator");
+            elevatorOpen = true;
+            yield return new WaitForSeconds(0.1f);
             elevatorOpen = false;
+            
         }
 
     }
