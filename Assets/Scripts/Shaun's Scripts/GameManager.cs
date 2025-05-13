@@ -153,6 +153,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         canvas2Object.SetActive(true);
         StartCoroutine (showUI());
+        DeskBehavior.findSeats();
         elevatorOpen = true;
         yield return new WaitForSeconds(0.1f);
         elevatorOpen = false;
@@ -164,7 +165,6 @@ public class GameManager : MonoBehaviour
         //Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
         mapCamera.SetActive(false );
         isGameStarted = true;
-        DeskBehavior.findSeats();
         yield return new WaitForSeconds(5);
         elevatorOpen = true;
         yield return new WaitForSeconds(0.1f);
@@ -190,9 +190,9 @@ public class GameManager : MonoBehaviour
             int rand = Random.Range(0, 4);
             if (rand < 2)
                 Instantiate(coworkerPrefab, elevatorSpawn.position, transform.rotation, null);
-            else if (rand < 4)
+            else if (rand < 3)
                 Instantiate(coworkerPrefab2, elevatorSpawn.position, transform.rotation, null);
-            else if (rand == 4)
+            else if (rand <= 4)
                 Instantiate(coworkerPrefab3, elevatorSpawn.position, transform.rotation, null);
             //print("spawned");
             yield return new WaitForSeconds(5f);

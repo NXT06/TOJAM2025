@@ -20,6 +20,10 @@ public class DeskBehavior : MonoBehaviour
     {
         currentLayer = seatLayer; 
     }
+    private void Start()
+    {
+        seatStatus.Clear();
+    }
     public static void findSeats()
     {
         //scans the area for the chosen targetLayer
@@ -30,14 +34,15 @@ public class DeskBehavior : MonoBehaviour
         {
            
             seatStatus.Add(true);
-            //Debug.Log(seat);
+            Debug.Log(seatStatus.Count);
         }
     }
-    public static Transform CheckOccupied()
+    public static Transform CheckOccupied(int seatIndex)
     {
-        Transform seatTransform = null; 
         
-        for (int i = 0; i < seats.Length;)
+        
+        
+      /*  for (int i = 0; i < seats.Length;)
         {
 
             if (seatStatus[i] == true)
@@ -54,8 +59,17 @@ public class DeskBehavior : MonoBehaviour
             }
 
         }
+      */
 
-        return seatTransform; 
+        if (seatStatus[seatIndex] == true)
+        {
+            seatStatus[seatIndex] = false;
+            return seats[seatIndex].transform;
+
+        }
+        else { return null; }
+
+       
 
         }
 

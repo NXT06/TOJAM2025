@@ -8,7 +8,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		public BBParameter<Transform> playerTransform;
 		private PlayerController playerController;
-
+		 
 		public float rotationSpeed;
         private Quaternion currentRotation;
 
@@ -16,20 +16,25 @@ namespace NodeCanvas.Tasks.Actions {
 		private float kissTimer;
 
 		public BBParameter<Light> visionConeLight;
+		ParticleSystem particleSystem;
 
-		protected override string OnInit()
+        protected override string OnInit()
 		{
+			particleSystem = agent.GetComponent<ParticleSystem>();
             playerController = playerTransform.value.gameObject.GetComponent<PlayerController>();
+			
 			return null;
         }
 
 		protected override void OnExecute() {
 			playerController.isKissing = true;
 			kissTimer = 0;
+			particleSystem.Play();
 		}
 
 		protected override void OnUpdate() {
-       
+
+
 			//rotate coworker
 			Vector3 playerToWorker = playerTransform.value.position - agent.transform.position;
 			playerToWorker.y = 0;
@@ -50,6 +55,7 @@ namespace NodeCanvas.Tasks.Actions {
 			if (kissTimer >= kissDuration)
 			{
                 //reactivate vision cone
+				particleSystem.Stop();
                 visionConeLight.value.enabled = true;
 
                 playerController.isKissing = false;

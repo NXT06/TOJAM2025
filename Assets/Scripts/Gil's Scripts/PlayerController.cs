@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetTrigger("Kiss");
                 Score.Kiss();
-                Sliders.t = 40f; 
+                Sliders.t += 40f / (Score.kissCounter * 0.5f); 
                 //play sound
                 kissTriggered = true;
             }

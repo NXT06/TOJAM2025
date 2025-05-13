@@ -9,6 +9,7 @@ public class Sliders : MonoBehaviour
     public static float t = 20f;
     float timer = 0f;
     public float startTime; 
+    
 
     public static bool sliderStatus = true; 
     // Start is called before the first frame update
@@ -25,10 +26,6 @@ public class Sliders : MonoBehaviour
         
     }
 
-    public void kiss()
-    {
-        t = 40f;
-    }
 
     private IEnumerator Timer()
     {
